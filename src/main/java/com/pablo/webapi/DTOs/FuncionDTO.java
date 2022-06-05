@@ -1,5 +1,6 @@
 package com.pablo.webapi.DTOs;
 
+import com.pablo.webapi.Domain.Pelicula;
 import com.pablo.webapi.Domain.Sala;
 
 
@@ -8,14 +9,17 @@ import java.util.Date;
 public class FuncionDTO {
     private Date fecha;
     private Date horario;
-    private Long peliculaId;
+    private Pelicula pelicula;
     private Sala sala;
 
     public FuncionDTO() {
     }
 
-    public Long getPeliculaId() {
-        return peliculaId;
+    public void setPelicula(Pelicula pelicula) {
+        this.pelicula = pelicula;
+    }
+    public Pelicula getPelicula() {
+        return pelicula;
     }
 
     public void setFecha(Date fecha) {

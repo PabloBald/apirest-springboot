@@ -63,24 +63,22 @@ public class FuncionService implements IFuncionService {
         return lista;
     }
 
-    @Override
-    public List<Funcion> listarFuncionesPorSala(Long sala_id) {
-        return funcionRepository.obtenerFuncionesPorSala(sala_id);
-    }
 
-    public List<FuncionDTO> obtenerFuncionesPorPeliculaId(Long id){
+    public List<FuncionDTO> listarFuncionesPorPelicula(Long id){
         //TODO Hacer query para este metodo.
-        List<FuncionDTO> lst = new ArrayList<>();
+        List<Funcion> listaFunciones = funcionRepository.getFuncionPorPelicula(id);
+        List<FuncionDTO> listaDto = new ArrayList<>();
 
-        FuncionDTO func = new FuncionDTO();
-        for(FuncionDTO funcion : lst){
+        for(Funcion funcion : listaFunciones){
+            FuncionDTO func = new FuncionDTO();
+            func.setPelicula(funcion.getPelicula());
             func.setFecha(funcion.getFecha());
             func.setHorario(funcion.getHorario());
             func.setSala(funcion.getSala());
 
-            lst.add(func);
+            listaDto.add(func);
         }
-        return lst;
+        return listaDto;
     }
 
     private POSTFuncionDTO convertirEntidadADTO(Funcion f){

@@ -10,6 +10,6 @@ import java.util.List;
 public interface IFuncionService {
     ResponseObject crear(POSTFuncionDTO f);
     List<POSTFuncionDTO> listarFunciones();
-    List<Funcion> listarFuncionesPorSala(Long sala_id);
+    List<FuncionDTO> listarFuncionesPorPelicula(Long peliculaId);
 }
 

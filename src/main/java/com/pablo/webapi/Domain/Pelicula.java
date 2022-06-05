@@ -57,10 +57,6 @@ public class Pelicula {
     private String poster;
     private String sinopsis;
 
-    public Collection<Funcion> getFunciones() {
-        return funciones;
-    }
-
     private String trailer;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "pelicula")

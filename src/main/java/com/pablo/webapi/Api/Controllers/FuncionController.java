@@ -1,5 +1,6 @@
 package com.pablo.webapi.Api.Controllers;
 
+import com.pablo.webapi.DTOs.FuncionDTO;
 import com.pablo.webapi.DTOs.POSTFuncionDTO;
 import com.pablo.webapi.Services.Interfaces.IFuncionService;
 import com.pablo.webapi.Utils.ResponseObject;
@@ -26,6 +27,10 @@ public class FuncionController {
         return service.listarFunciones();
     }
 
+    @GetMapping("/p/{id}")
+    public List<FuncionDTO> listarFuncionesPorPelicula(@PathVariable(name = "id") Long id){
+        return service.listarFuncionesPorPelicula(id);
+    }
    //TODO: Listar en un rango horario
 
 
